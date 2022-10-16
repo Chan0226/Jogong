@@ -9,7 +9,7 @@
 		p.num as productNum, p.name as productName, p.thumbnailImageUrl, p.brand, u.nickname, u.profileImage
 		from  jogong.order as o left join user as u on o.userNum=u.num 
 		left join product as p on o.productNum = p.num
-		where friendNum=#{num} order by num desc
+		where friendNum=#{num} order by o.num desc
 	</select>
 
 	<!-- 보낸 선물함 조회  -->
@@ -18,7 +18,7 @@
 		p.num as productNum, p.name as productName, p.thumbnailImageUrl, p.brand, u.nickname, u.profileImage
 		from  jogong.order as o left join user as u on o.friendNum=u.num 
 		left join product as p on o.productNum = p.num
-		where userNum=#{num} order by num desc
+		where userNum=#{num} order by o.num desc
 	</select>
 	
 	<!-- 주소 입력 -->
